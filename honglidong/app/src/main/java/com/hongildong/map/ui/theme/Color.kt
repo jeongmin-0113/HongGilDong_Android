@@ -22,7 +22,7 @@ val Gray500 = Color(0xFF858A9F)
 val Gray600 = Color(0xFF555A6E)
 val Gray700 = Color(0xFF444959)
 val Gray800 = Color(0xFF303545)
-val Black = Color(0x00000000)
+val Black = Color(0xFF000000)
 
 // Primary
 val PrimaryLight = Color(0xFF6F93FF)

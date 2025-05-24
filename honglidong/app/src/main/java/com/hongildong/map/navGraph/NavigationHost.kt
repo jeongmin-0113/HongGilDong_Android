@@ -25,7 +25,7 @@ fun NavigationHost(navController: NavHostController) {
             ProfileScreen()
         }
         composable(route = NavRoute.Search.route) {
-            SearchScreen()
+            SearchScreen(navController)
         }
     }
 }
