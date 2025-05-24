@@ -11,6 +11,7 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 // Gray scale
+val White = Color(0xFFFFFFFF)
 val White50 = Color(0xFFCDCDCD)
 val Gray50 = Color(0xFFF5F3FA)
 val Gray100 = Color(0xFFEFF2F6)
@@ -21,6 +22,7 @@ val Gray500 = Color(0xFF858A9F)
 val Gray600 = Color(0xFF555A6E)
 val Gray700 = Color(0xFF444959)
 val Gray800 = Color(0xFF303545)
+val Black = Color(0x00000000)
 
 // Primary
 val PrimaryLight = Color(0xFF6F93FF)
