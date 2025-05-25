@@ -35,12 +35,40 @@ val Typography = Typography(
         fontSize = 13.sp,
         lineHeight = 22.sp
     ),
+    labelMedium = TextStyle( // style1 - 작게 변경
+        fontFamily = Pretendard,
+        fontWeight = FontWeight.Normal,
+        fontSize = 15.sp,
+        lineHeight = 22.sp,
+        letterSpacing = -(0.2).sp
+    ),
     labelLarge = TextStyle( // style1
         fontFamily = Pretendard,
         fontWeight = FontWeight.Normal,
         fontSize = 18.sp,
         lineHeight = 22.sp,
         letterSpacing = -(0.2).sp
-    )
+    ),
+    titleLarge = TextStyle( // style1
+        fontFamily = Pretendard,
+        fontWeight = FontWeight.Bold,
+        fontSize = 22.sp,
+        lineHeight = 22.sp,
+        letterSpacing = -(0.2).sp
+    ),
+    titleMedium = TextStyle( // style1
+        fontFamily = Pretendard,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp,
+        lineHeight = 22.sp,
+        letterSpacing = -(0.2).sp
+    ),
+    titleSmall = TextStyle( // style1
+        fontFamily = Pretendard,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
+        lineHeight = 22.sp,
+        letterSpacing = -(0.2).sp
+    ),
 
 )

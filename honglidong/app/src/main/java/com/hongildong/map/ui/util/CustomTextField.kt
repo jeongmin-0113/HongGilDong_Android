@@ -22,6 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.hongildong.map.ui.theme.Black
+import com.hongildong.map.ui.theme.Gray100
 import com.hongildong.map.ui.theme.Gray400
 import com.hongildong.map.ui.theme.White
 
@@ -32,15 +33,15 @@ fun CustomTextField(
     placeholderMessage: String,
     textState: String,
     onTextChange: (String) -> Unit,
-    outlineColor: Color = Color(0xffF7F7F7),
     isPassword: Boolean = false,
-    maxLength: Int,
+    maxLength: Int = 20,
+    textStyle: TextStyle = MaterialTheme.typography.labelMedium.copy(color = Black)
 ) {
     BasicTextField(
         value = textState,
         onValueChange =  { if (it.length <= maxLength) onTextChange(it) },
         singleLine = true,
-        textStyle = MaterialTheme.typography.labelLarge.copy(color = Black),
+        textStyle = textStyle,
         visualTransformation = if (isPassword) {
             PasswordVisualTransformation()
         } else {
@@ -53,7 +54,7 @@ fun CustomTextField(
                     .padding(horizontal = 20.dp)
                     .fillMaxWidth()
                     .background(color = White, shape = RoundedCornerShape(size = 10.dp))
-                    .border(1.dp, color = outlineColor, shape = RoundedCornerShape(size = 10.dp))
+                    .border(1.dp, color = Gray100, shape = RoundedCornerShape(size = 10.dp))
                     .padding(all = 16.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
@@ -62,7 +63,7 @@ fun CustomTextField(
                         text = placeholderMessage,
                         color = Gray400,
                         textAlign = TextAlign.Start,
-                        style = MaterialTheme.typography.labelLarge,
+                        style = MaterialTheme.typography.labelMedium,
                         modifier = Modifier
                             .fillMaxWidth()
                             .align(Alignment.CenterVertically),

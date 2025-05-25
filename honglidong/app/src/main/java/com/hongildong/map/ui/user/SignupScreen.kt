@@ -1,4 +1,4 @@
-package com.hongildong.map.ui.home
+package com.hongildong.map.ui.user
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -6,55 +6,59 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.hongildong.map.R
-import com.hongildong.map.ui.theme.Gray600
+import com.hongildong.map.ui.theme.Black
 import com.hongildong.map.ui.theme.White
-import com.hongildong.map.ui.util.CustomTextField
 
 @Composable
-fun SearchScreen(navController: NavHostController) {
-    var textState by remember { mutableStateOf("") }
-    Text("search screen", style = MaterialTheme.typography.labelLarge)
+fun SignupScreen(
+    onSignupClick: () -> Unit,
+    onGoBackClick: () -> Unit
+
+) {
     Column(
-        modifier = Modifier.background(White).fillMaxSize().padding(vertical = 20.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(White)
+            .systemBarsPadding(),
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().systemBarsPadding(),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.Start,
         ) {
             Image(
                 painter = painterResource(R.drawable.ic_back),
                 contentDescription = "go back button",
                 modifier = Modifier
                     .padding(start = 10.dp)
-                    .clickable {
-                        navController.popBackStack()
-                    }
+                    .clickable { onGoBackClick() }
             )
-            CustomTextField(
-                placeholderMessage = "홍익대학교에서 길을 찾아보세요.",
-                textState = textState,
-                onTextChange = { textState = it },
-                maxLength = 15
+            Spacer(Modifier.width(20.dp))
+            Text(
+                "회원가입",
+                style = MaterialTheme.typography.titleLarge.copy(color = Black),
             )
         }
-
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(White),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Text("회원가입 페이지", style = MaterialTheme.typography.labelLarge)
+        }
     }
 }
