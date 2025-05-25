@@ -32,7 +32,7 @@ fun SearchScreen(navController: NavHostController) {
     var textState by remember { mutableStateOf("") }
     Text("search screen", style = MaterialTheme.typography.labelLarge)
     Column(
-        modifier = Modifier.background(White).fillMaxSize(),
+        modifier = Modifier.background(White).fillMaxSize().padding(vertical = 20.dp),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth().systemBarsPadding(),
