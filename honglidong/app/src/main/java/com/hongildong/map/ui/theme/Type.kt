@@ -49,10 +49,24 @@ val Typography = Typography(
         lineHeight = 22.sp,
         letterSpacing = -(0.2).sp
     ),
-    titleMedium = TextStyle( // style1
+    titleLarge = TextStyle( // style1
         fontFamily = Pretendard,
         fontWeight = FontWeight.Bold,
         fontSize = 22.sp,
+        lineHeight = 22.sp,
+        letterSpacing = -(0.2).sp
+    ),
+    titleMedium = TextStyle( // style1
+        fontFamily = Pretendard,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp,
+        lineHeight = 22.sp,
+        letterSpacing = -(0.2).sp
+    ),
+    titleSmall = TextStyle( // style1
+        fontFamily = Pretendard,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
         lineHeight = 22.sp,
         letterSpacing = -(0.2).sp
     ),

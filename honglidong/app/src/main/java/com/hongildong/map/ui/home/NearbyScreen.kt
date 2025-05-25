@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.BottomSheetScaffoldState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -39,10 +38,8 @@ import com.hongildong.map.ui.util.FlexibleBottomSheet
 @Composable
 fun NearbyScreen(
     navController: NavHostController,
-    sheetScaffoldState: BottomSheetScaffoldState
 ) {
-
-
+    val sheetScaffoldState = rememberBottomSheetScaffoldState()
 
     Box(
         modifier = Modifier
@@ -107,7 +104,8 @@ fun NearbyScreen(
                 verticalArrangement = Arrangement.Top
             ) {
                 Text("여기는 어때요?", style = MaterialTheme.typography.titleMedium.copy(Black))
-                Spacer(Modifier.height(6000.dp))
+                Spacer(Modifier.height(20.dp))
+                RecommendPlaces()
             }
         }
 
@@ -116,5 +114,19 @@ fun NearbyScreen(
 
 @Composable
 fun RecommendPlaces() {
-    Text("bookmark screen", style = MaterialTheme.typography.labelLarge)
+    Text("recommend places", style = MaterialTheme.typography.labelLarge)
 }
+
+@Composable
+fun RecommendPlaceCard(place: Place) {
+    Box(
+        modifier = Modifier.fillMaxWidth()
+    )
+}
+
+data class Place(
+    val name: String = "멀티미디어실",
+    val location: String = "제4공학관 T동 605호",
+    val isBookmarked: Boolean = false,
+    val images: List<Int> = listOf(R.drawable.img_blank * 15)
+)

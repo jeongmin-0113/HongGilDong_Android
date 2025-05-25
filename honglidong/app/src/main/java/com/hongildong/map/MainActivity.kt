@@ -13,14 +13,18 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.hongildong.map.navGraph.AppNavHost
 import com.hongildong.map.navGraph.BottomNavigationBar
-import com.hongildong.map.navGraph.NavigationHost
+import com.hongildong.map.navGraph.MainNavHost
 import com.hongildong.map.ui.theme.HongildongTheme
+import com.hongildong.map.ui.user.EnterScreen
 import com.hongildong.map.ui.util.MapBackground
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
@@ -29,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Color.White
                 ) {
-                    MainScreen()
+                    AppNavHost()
                 }
             }
         }
@@ -37,7 +41,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen() {
+fun MainScreen(
+    rootNavController: NavHostController
+) {
     val navController = rememberNavController()
 
     Scaffold(
@@ -51,7 +57,10 @@ fun MainScreen() {
                 .padding(bottom = paddingValues.calculateBottomPadding())
                 .background(Color.Transparent)
         ) {
-            NavigationHost(navController)
+            MainNavHost(
+                rootNavController = rootNavController,
+                mainNavController = navController
+            )
         }
     }
 }
