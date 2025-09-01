@@ -16,6 +16,7 @@ import com.hongildong.map.ui.user.EnterScreen
 import com.hongildong.map.ui.user.LoginScreen
 import com.hongildong.map.ui.user.SignupScreen
 
+// 전체 앱 navhost
 @Composable
 fun AppNavHost() {
     val rootNavController = rememberNavController()
@@ -46,6 +47,7 @@ fun AppNavHost() {
     }
 }
 
+// 로그인/회원가입 부분 navhost
 @Composable
 fun EnterNavHost(
     rootNavController: NavHostController
@@ -97,6 +99,7 @@ fun EnterNavHost(
     }
 }
 
+// 메인 화면 바텀 네비 호스트
 @Composable
 fun MainNavHost(
     rootNavController: NavHostController,
