@@ -1,7 +1,6 @@
 package com.hongildong.map.navGraph
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -11,7 +10,7 @@ import com.hongildong.map.MainScreen
 import com.hongildong.map.ui.home.BookmarkScreen
 import com.hongildong.map.ui.home.NearbyScreen
 import com.hongildong.map.ui.home.ProfileScreen
-import com.hongildong.map.ui.home.SearchScreen
+import com.hongildong.map.ui.home.search.SearchScreen
 import com.hongildong.map.ui.user.EnterScreen
 import com.hongildong.map.ui.user.LoginScreen
 import com.hongildong.map.ui.user.SignupScreen

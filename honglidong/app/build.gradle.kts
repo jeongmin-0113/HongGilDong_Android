@@ -34,8 +34,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "11"
@@ -83,4 +81,5 @@ dependencies {
     val hilt_version = "2.57.1"
     implementation("com.google.dagger:hilt-android:$hilt_version")
     ksp("com.google.dagger:hilt-android-compiler:$hilt_version")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 }
