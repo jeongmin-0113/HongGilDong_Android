@@ -84,7 +84,7 @@ fun CustomTextField(
         // 2. 키보드 액션 설정
         keyboardActions = KeyboardActions(
             // 완료 버튼을 눌렀을 때 실행될 동작
-            onSearch = {
+            onDone = {
                 // onSearch 콜백 함수 실행
                 onSearch(textState)
                 // 검색 실행 후 키보드 숨기기

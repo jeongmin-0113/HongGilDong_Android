@@ -77,7 +77,10 @@ fun SearchScreen(
                 placeholderMessage = "홍익대학교에서 길을 찾아보세요.",
                 textState = textState,
                 onTextChange = { textState = it },
-                onSearch = { viewModel.onSearch(it) },
+                onSearch = {
+                    viewModel.onSearch(it)
+                    textState = ""
+                },
                 maxLength = 15
             )
         }
@@ -110,6 +113,8 @@ fun SearchScreen(
             )
         }
 
+        Spacer(modifier = Modifier.height(10.dp))
+
         // 검색기록 없을 때는 검색기록이 없다 문구 / 검색기록 있을 때는 검색기록 보여주기
         if (recentlySearchedKeywords.isEmpty()) {
             // 검색기록 없음 문구
@@ -121,7 +126,7 @@ fun SearchScreen(
                     RecentlySearchedItem(
                         itemName = keyword.keyword,
                         onClickItem = {
-                            textState = keyword.keyword
+                            textState = ""
                             viewModel.onSearch(keyword.keyword)
                         },
                         onDeleteItem = {
